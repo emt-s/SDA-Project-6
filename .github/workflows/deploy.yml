@@ -37,3 +37,14 @@ jobs:
         port: 22
         script: |
           GIT_REPO=${{ secrets.GIT_REPO }} bash /home/azureuser/project6/SDA-Project-6/update_app.sh
+
+    # Execute the Update Script on the VM
+    - name: Deploy to Azure VM
+      run: |
+        az vmss extension set \
+          --resource-group ${{ secrets.RESOURCE_GROUP }} \
+          --vm-name ${{ secrets.VM_NAME }} \
+          --name CustomScript \
+          --force-update \
+          --publisher Microsoft.Azure.Extensions \
+          --settings '{"commandToExecute": "/home/azureuser/project6/SDA-Project-6/update_app.sh"}'
