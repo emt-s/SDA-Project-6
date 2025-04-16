@@ -53,4 +53,4 @@ jobs:
           --name CustomScript \
           --force-update \
           --publisher Microsoft.Azure.Extensions \
-          --settings '{"commandToExecute": "/home/azureuser/project6/SDA-Project-6/update_app.sh"}'
+          --settings '{"commandToExecute": "chmod +x /home/azureuser/project6/SDA-Project-6/update_app.sh && /home/azureuser/project6/SDA-Project-6/update_app.sh"}'
