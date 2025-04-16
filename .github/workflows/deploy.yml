@@ -27,16 +27,7 @@ jobs:
       run: |
         echo "Run tests"
         
-    # Execute the Update Script on the VM
-    - name: Deploy to Azure VM via SSH
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ secrets.VM_IP }}
-        username: azureuser
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22
-        script: |
-          GIT_REPO=${{ secrets.GIT_REPO }} bash /home/azureuser/project6/SDA-Project-6/update_app.sh
+
 
     # Login to Azure
     - name: Azure Login
