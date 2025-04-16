@@ -19,6 +19,8 @@ else
     sudo -u azureuser git clone -b $BRANCH "$GIT_REPO" "$APP_DIR"
 fi
 
+"commandToExecute": "chmod +x /home/azureuser/project6/SDA-Project-6/update_app.sh && /home/azureuser/project6/SDA-Project-6/update_app.sh"
+
 #Update requirements
 sudo -u azureuser /home/azureuser/pr-stage-5/venv/bin/pip install --upgrade pip
 sudo -u azureuser /home/azureuser/pr-stage-5/venv/bin/pip install -r "$APP_DIR/requirements.txt"
